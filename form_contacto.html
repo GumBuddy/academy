@@ -1953,6 +1953,7 @@
 
   // ============ ENVIAR POR WHATSAPP ============
   function buildWhatsAppMessage() {
+    const getVal = (key) => formData[key] || 'No especificado';
     const lines = [];
     lines.push('📋 *NUEVO PROSPECTO - Asesorías Angelo*');
     lines.push('');
