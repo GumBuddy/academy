@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angelo Azcorra · Academy — Asesorías Académicas Personalizadas</title>
+<meta name="description" content="Asesorías académicas en Campeche. Matemáticas, programación, ingeniería y ciencias biomédicas. De secundaria a universidad. Método personalizado.">
+<meta property="og:title" content="Angelo Azcorra · Academy">
+<meta property="og:description" content="Asesorías académicas personalizadas en Campeche. Tutoría profesional con método propio.">
+<meta property="og:type" content="website">
+
+<!-- Logo desde tu portafolio existente -->
+<link rel="icon" type="image/svg+xml" href="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg">
+
+<!-- Fuentes: Geist (moderna distintiva) + Instrument Serif (acentos italic premium) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Apple-inspired palette */
+    --bg: #FBFBFD;
+    --bg-elevated: #FFFFFF;
+    --bg-tinted: #F5F5F7;
+    --bg-deep: #1D1D1F;
+
+    --ink: #1D1D1F;
+    --ink-soft: #6E6E73;
+    --ink-faint: #86868B;
+
+    --line: #D2D2D7;
+    --line-soft: #E8E8ED;
+
+    /* Brand accents — coherente con tu logo */
+    --brand: #1E4A8C;
+    --brand-soft: #4A7BC8;
+    --accent: #0071E3;
+    --gold: #B98B3F;
+
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 40px;
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.08), 0 32px 80px rgba(0,0,0,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Geist', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; }
+
+  /* ============ TYPOGRAPHY ============ */
+  .display-xl {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+  }
+  .display-lg {
+    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+  .display-md {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    text-transform: none;
+  }
+  .lead {
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    letter-spacing: -0.01em;
+  }
+
+  /* ============ NAVBAR ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(251, 251, 253, 0.72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    transition: all 0.3s;
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.85rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .logo-mark img {
+    height: 32px;
+    width: auto;
+  }
+  .logo-text {
+    font-weight: 500;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+  }
+  .logo-text span {
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 400;
+    transition: opacity 0.2s;
+    opacity: 0.85;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--ink);
+    color: white !important;
+    padding: 0.55rem 1.1rem;
+    border-radius: 980px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    opacity: 1 !important;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--brand); }
+
+  /* ============ CONTAINERS ============ */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .container-narrow {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 7rem 0;
+    position: relative;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 10rem 0 6rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-tinted) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 113, 227, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line-soft);
+    border-radius: 980px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: #34C759;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.2);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(52, 199, 89, 0.2); }
+    50% { box-shadow: 0 0 0 8px rgba(52, 199, 89, 0); }
+  }
+  .hero h1 {
+    max-width: 900px;
+    margin: 0 auto 1.5rem;
+  }
+  .hero h1 .serif {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 0.1em;
+  }
+  .hero .lead {
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.95rem 1.6rem;
+    border-radius: 980px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.01em;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover {
+    background: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30, 74, 140, 0.25);
+  }
+  .btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn-secondary:hover {
+    background: var(--bg-tinted);
+    transform: translateY(-2px);
+  }
+  .btn-arrow {
+    transition: transform 0.3s;
+    display: inline-block;
+  }
+  .btn-primary:hover .btn-arrow,
+  .btn-secondary:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
+  /* HERO VISUAL — Floating cards arrangement */
+  .hero-showcase {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 360px;
+  }
+  .showcase-card {
+    position: absolute;
+    background: var(--bg-elevated);
+    padding: 1.3rem 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--line-soft);
+    text-align: left;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .showcase-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+  }
+  .showcase-card.c1 { top: 10%; left: 5%; width: 240px; transform: rotate(-6deg); animation: float1 6s ease-in-out infinite; }
+  .showcase-card.c2 { top: 0; left: 50%; width: 280px; transform: translateX(-50%) rotate(2deg); z-index: 2; animation: float2 7s ease-in-out infinite; }
+  .showcase-card.c3 { top: 15%; right: 5%; width: 240px; transform: rotate(5deg); animation: float3 8s ease-in-out infinite; }
+  .showcase-card.c4 { bottom: 5%; left: 22%; width: 220px; transform: rotate(3deg); animation: float1 9s ease-in-out infinite reverse; }
+  .showcase-card.c5 { bottom: 8%; right: 22%; width: 220px; transform: rotate(-4deg); animation: float2 7.5s ease-in-out infinite reverse; }
+
+  @keyframes float1 { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(-4deg) translateY(-12px); } }
+  @keyframes float2 { 0%, 100% { transform: translateX(-50%) rotate(2deg) translateY(0); } 50% { transform: translateX(-50%) rotate(0deg) translateY(-15px); } }
+  @keyframes float3 { 0%, 100% { transform: rotate(5deg) translateY(0); } 50% { transform: rotate(3deg) translateY(-10px); } }
+
+  .showcase-icon {
+    width: 40px; height: 40px;
+    background: var(--bg-tinted);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+  }
+  .showcase-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .showcase-sub {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  /* ============ SECTION INTRO ============ */
+  .section-intro {
+    max-width: 760px;
+    margin: 0 auto 5rem;
+    text-align: center;
+  }
+  .section-intro .eyebrow { margin-bottom: 1rem; display: block; }
+  .section-intro h2 { margin-bottom: 1.2rem; }
+  .section-intro .lead { font-size: 1.2rem; }
+
+  /* ============ ABOUT ============ */
+  .about {
+    background: var(--bg-elevated);
+    border-block: 1px solid var(--line-soft);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-portrait {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #F0F4FA 0%, #E8EEF7 100%);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .about-portrait::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(0, 113, 227, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 70% 70%, rgba(185, 139, 63, 0.15) 0%, transparent 50%);
+  }
+  .about-portrait-logo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    opacity: 0.25;
+    filter: grayscale(20%);
+  }
+  .about-portrait-tag {
+    position: absolute;
+    bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  .about-portrait-tag-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  .about-portrait-tag-sub {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .about-text h2 { margin-bottom: 1.5rem; }
+  .about-text p {
+    color: var(--ink-soft);
+    margin-bottom: 1.2rem;
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+  .about-text strong { color: var(--ink); font-weight: 500; }
+
+  .credentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+  .cred {
+    padding: 1rem 1.2rem;
+    background: var(--bg-tinted);
+    border-radius: var(--radius-sm);
+    transition: transform 0.3s;
+  }
+  .cred:hover { transform: translateY(-2px); }
+  .cred-title {
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.15rem;
+    font-size: 0.95rem;
+  }
+  .cred-sub {
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+  }
+
+  /* ============ SUBJECTS ============ */
+  .subjects {
+    background: var(--bg);
+  }
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .subject-card {
+    background: var(--bg-elevated);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line-soft);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .subject-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--line);
+  }
+  .subject-icon-wrap {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--bg-tinted), var(--bg));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--line-soft);
+  }
+  .subject-level {
+    font-size: 0.78rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.005em;
+  }
+  .subject-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .subject-title .serif {
+    font-size: 1.5rem;
+    color: var(--brand);
+  }
+  .subject-desc {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+  }
+  .subject-list {
+    list-style: none;
+    border-top: 1px solid var(--line-soft);
+    padding-top: 1.2rem;
+  }
+  .subject-list li {
+    padding: 0.45rem 0;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .subject-list li::before {
+    content: '';
+    width: 4px; height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ============ METHOD ============ */
+  .method {
+    background: var(--bg-deep);
+    color: white;
+  }
+  .method .section-intro h2 { color: white; }
+  .method .section-intro .lead { color: rgba(255,255,255,0.65); }
+  .method .eyebrow { color: #5BA0FF; }
+
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    counter-reset: step;
+  }
+  .method-step {
+    position: relative;
+    padding-top: 1rem;
+  }
+  .method-step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 4.5rem;
+    color: rgba(185, 139, 63, 0.4);
+    line-height: 0.8;
+    display: block;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+  }
+  .step-text {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ============ PRICING ============ */
+  .pricing {
+    background: var(--bg-tinted);
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .price-card {
+    background: var(--bg-elevated);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line-soft);
+    transition: transform 0.3s;
+    position: relative;
+  }
+  .price-card:hover { transform: translateY(-4px); }
+  .price-card.featured {
+    background: linear-gradient(180deg, #1D1D1F 0%, #2C2C2E 100%);
+    color: white;
+    border: none;
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+  }
+  .price-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+  .price-card.featured .price-name,
+  .price-card.featured .price-amount,
+  .price-card.featured .price-feature { color: white; }
+  .price-card.featured .price-sub,
+  .price-card.featured .price-suffix { color: rgba(255,255,255,0.6); }
+  .price-card.featured .price-feature::before { color: var(--gold); }
+  .price-card.featured .price-divider { background: rgba(255,255,255,0.1); }
+  .price-card.featured .price-btn {
+    background: white;
+    color: var(--ink);
+  }
+
+  .price-badge {
+    position: absolute;
+    top: -10px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: white;
+    padding: 0.3rem 0.9rem;
+    border-radius: 980px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .price-name {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .price-sub {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    margin-bottom: 1.5rem;
+  }
+  .price-amount {
+    font-family: 'Instrument Serif', serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+  .price-suffix {
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    margin-bottom: 1.5rem;
+  }
+  .price-divider {
+    height: 1px;
+    background: var(--line-soft);
+    margin: 1.5rem 0;
+  }
+  .price-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  .price-feature {
+    padding: 0.5rem 0 0.5rem 1.6rem;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    position: relative;
+    line-height: 1.4;
+  }
+  .price-feature::before {
+    content: '→';
+    position: absolute;
+    left: 0; top: 0.5rem;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .price-btn {
+    display: block;
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--ink);
+    color: white;
+    border-radius: 980px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  .price-btn:hover { background: var(--brand); }
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials { background: var(--bg-elevated); border-block: 1px solid var(--line-soft); }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .testi-card {
+    padding: 2rem;
+    background: var(--bg-tinted);
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .testi-card:hover { transform: translateY(-3px); }
+  .testi-quote {
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line-soft);
+  }
+  .testi-avatar {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+  }
+  .testi-name {
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 0.92rem;
+  }
+  .testi-role {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+
+  /* ============ FAQ ============ */
+  .faq { background: var(--bg); }
+  .faq-list {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line-soft);
+    padding: 1.5rem 0;
+    cursor: pointer;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .faq-icon {
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--bg-tinted);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+  }
+  .faq-item.active .faq-icon {
+    background: var(--ink);
+    color: white;
+    transform: rotate(45deg);
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .faq-item.active .faq-a {
+    max-height: 300px;
+    padding-top: 1rem;
+  }
+
+  /* ============ CTA FINAL ============ */
+  .cta-final {
+    padding: 8rem 0;
+    text-align: center;
+    background: linear-gradient(180deg, var(--bg-tinted) 0%, var(--bg) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(0, 113, 227, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 50%, rgba(185, 139, 63, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .cta-final-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .cta-final h2 {
+    margin-bottom: 1.5rem;
+  }
+  .cta-final h2 .serif {
+    color: var(--brand);
+  }
+  .cta-final .lead {
+    margin-bottom: 2.5rem;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--bg-deep);
+    color: rgba(255,255,255,0.7);
+    padding: 5rem 0 2rem;
+  }
+  .footer-grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand .logo-mark img { filter: invert(1) brightness(2); }
+  .footer-brand .logo-text { color: white; }
+  .footer-brand .logo-text span { color: rgba(255,255,255,0.5); }
+  .footer-tagline {
+    margin-top: 1.2rem;
+    max-width: 320px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.55);
+  }
+  .footer-col h4 {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 0.7rem; }
+  .footer-col a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: white; }
+
+  /* Cross-link al portafolio principal */
+  .cross-link {
+    max-width: 1280px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .cross-link-text {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.95rem;
+  }
+  .cross-link-text strong { color: white; font-weight: 500; }
+  .cross-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.08);
+    border-radius: 980px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .cross-link a:hover { background: rgba(255,255,255,0.15); }
+
+  .footer-bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ============ FLOATING WHATSAPP ============ */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 56px; height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+    z-index: 99;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+  }
+  .whatsapp-float svg {
+    width: 28px; height: 28px;
+    fill: white;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 900px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+    section { padding: 5rem 0; }
+    .hero { padding: 8rem 0 4rem; }
+    .hero-showcase { height: 280px; }
+    .showcase-card.c4, .showcase-card.c5 { display: none; }
+    .showcase-card.c1 { left: 0; width: 200px; }
+    .showcase-card.c3 { right: 0; width: 200px; }
+    .showcase-card.c2 { width: 220px; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .subjects-grid, .testi-grid, .pricing-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: none; }
+    .price-card.featured:hover { transform: translateY(-4px); }
+    .method-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .cross-link { flex-direction: column; text-align: center; }
+  }
+
+  /* ============ ANIMATIONS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo-mark">
+      <img src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="Angelo Azcorra">
+      <span class="logo-text">Angelo Azcorra <span>· Academy</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#materias">Materias</a>
+      <a href="#metodo">Método</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto" class="nav-cta">Agendar</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container-narrow">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Disponible para nuevos estudiantes · Campeche
+    </div>
+
+    <h1 class="display-xl">
+      Aprende lo que pensabas que <span class="serif">no podías</span>.
+    </h1>
+
+    <p class="lead">
+      Asesorías académicas personalizadas. De secundaria a universidad.
+      Ciencias exactas, programación e ingeniería, y ciencias biomédicas.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">
+        Agenda tu primera sesión
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#materias" class="btn-secondary">
+        Ver materias
+      </a>
+    </div>
+
+    <div class="hero-showcase">
+      <div class="showcase-card c1">
+        <div class="showcase-icon">📐</div>
+        <div class="showcase-title">Cálculo I</div>
+        <div class="showcase-sub">De 6 a 9 en 4 sesiones</div>
+      </div>
+      <div class="showcase-card c2">
+        <div class="showcase-icon">💻</div>
+        <div class="showcase-title">Python desde cero</div>
+        <div class="showcase-sub">"Por fin lo entiendo"</div>
+      </div>
+      <div class="showcase-card c3">
+        <div class="showcase-icon">🧬</div>
+        <div class="showcase-title">Bioquímica</div>
+        <div class="showcase-sub">De 5 a 9 en el parcial</div>
+      </div>
+      <div class="showcase-card c4">
+        <div class="showcase-icon">⚛️</div>
+        <div class="showcase-title">Física II</div>
+        <div class="showcase-sub">Recuperación del semestre</div>
+      </div>
+      <div class="showcase-card c5">
+        <div class="showcase-icon">📊</div>
+        <div class="showcase-title">Tesis acompañada</div>
+        <div class="showcase-sub">Defendida con éxito</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="sobre-mi">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-portrait">
+        <img class="about-portrait-logo" src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="">
+        <div class="about-portrait-tag">
+          <div class="about-portrait-tag-title">Angelo Duriel Azcorra</div>
+          <div class="about-portrait-tag-sub">Campeche, México · 5+ años enseñando</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="eyebrow">Sobre mí</span>
+        <h2 class="display-lg">
+          No solo enseño la materia. <span class="serif">Te enseño a pensarla.</span>
+        </h2>
+
+        <p>
+          Soy <strong>Angelo Duriel Azcorra Moguel</strong>. Ingeniero en Sistemas Computacionales por la Universidad Autónoma de Campeche, docente activo a nivel licenciatura, y actualmente curso una <strong>segunda carrera en ciencias de la salud</strong> por convicción de seguir aprendiendo.
+        </p>
+        <p>
+          Mi camino es poco común: ser ingeniero titulado no me bastó. Volví a las aulas porque me apasiona aprender, y eso me da algo que pocos profesores tienen: <strong>sé exactamente cómo se siente batallar con una materia técnica hoy</strong>, no hace 15 años. Esa misma curiosidad es la que llevo a cada sesión.
+        </p>
+        <p>
+          He desarrollado plataformas educativas con inteligencia artificial, he enseñado en aula universitaria, y trabajo todos los días en métodos de estudio. Por eso mi método funciona: <strong>no doy clases para que apruebes. Doy clases para que entiendas.</strong>
+        </p>
+
+        <div class="credentials">
+          <div class="cred">
+            <div class="cred-title">Ingeniería en Sistemas</div>
+            <div class="cred-sub">UAC · Titulado</div>
+          </div>
+          <div class="cred">
+            <div class="cred-title">Ciencias de la Salud</div>
+            <div class="cred-sub">Formación continua activa</div>
+          </div>
+          <div class="cred">
+            <div class="cred-title">Docente Universitario</div>
+            <div class="cred-sub">Colegio del Golfo</div>
+          </div>
+          <div class="cred">
+            <div class="cred-title">Lead Developer</div>
+            <div class="cred-sub">Plataforma EdTech con IA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBJECTS ============ -->
+<section class="subjects" id="materias">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Qué enseño</span>
+      <h2 class="display-lg">
+        Un rango único. <span class="serif">De matemáticas a biología molecular.</span>
+      </h2>
+      <p class="lead">
+        Selecciona el nivel y la materia. Si no la ves listada, escríbeme — probablemente también la doy.
+      </p>
+    </div>
+
+    <div class="subjects-grid">
+      <div class="subject-card">
+        <div class="subject-icon-wrap">📐</div>
+        <div class="subject-level">Secundaria · Preparatoria</div>
+        <h3 class="subject-title">Ciencias <span class="serif">exactas</span></h3>
+        <p class="subject-desc">Las bases que te abrirán cualquier carrera técnica.</p>
+        <ul class="subject-list">
+          <li>Matemáticas: álgebra, geometría, trigonometría</li>
+          <li>Cálculo diferencial e integral</li>
+          <li>Física general y aplicada</li>
+          <li>Química básica</li>
+          <li>Lógica y razonamiento</li>
+          <li>Preparación para examen CENEVAL</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <div class="subject-icon-wrap">💻</div>
+        <div class="subject-level">Universidad · Profesional</div>
+        <h3 class="subject-title">Ingeniería <span class="serif">y código</span></h3>
+        <p class="subject-desc">Mi especialidad profesional. Programación que entiendes desde el primer día.</p>
+        <ul class="subject-list">
+          <li>Programación: Python, JavaScript, TypeScript</li>
+          <li>Desarrollo web: React, frontend, backend</li>
+          <li>Bases de datos y SQL</li>
+          <li>Estructuras de datos y algoritmos</li>
+          <li>Cálculo, álgebra lineal, ecuaciones</li>
+          <li>Acompañamiento de tesis y proyectos finales</li>
+        </ul>
+      </div>
+
+      <div class="subject-card">
+        <div class="subject-icon-wrap">🧬</div>
+        <div class="subject-level">Universidad · Licenciatura</div>
+        <h3 class="subject-title">Ciencias <span class="serif">biomédicas</span></h3>
+        <p class="subject-desc">El tronco común de las carreras de salud. Para estudiantes de medicina, enfermería, nutrición, biología, química y veterinaria.</p>
+        <ul class="subject-list">
+          <li>Bioquímica y química orgánica</li>
+          <li>Biología celular y molecular</li>
+          <li>Anatomía y fisiología comparada</li>
+          <li>Microbiología y parasitología</li>
+          <li>Estadística aplicada a ciencias</li>
+          <li>Técnicas de memorización para ciencias densas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METHOD ============ -->
+<section class="method" id="metodo">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Mi método</span>
+      <h2 class="display-lg">
+        Cuatro pasos. <span class="serif">Cero relleno.</span>
+      </h2>
+      <p class="lead">
+        El proceso que uso con cada estudiante, sin importar el nivel o la materia.
+      </p>
+    </div>
+
+    <div class="method-grid">
+      <div class="method-step">
+        <h4 class="step-title">Diagnóstico inicial</h4>
+        <p class="step-text">Una sesión de 30 minutos gratis donde identifico exactamente dónde está tu bloqueo. No asumo nada, mido.</p>
+      </div>
+      <div class="method-step">
+        <h4 class="step-title">Plan personalizado</h4>
+        <p class="step-text">Te entrego una ruta con objetivos por semana. Sabes qué vamos a trabajar y para cuándo dominarás cada tema.</p>
+      </div>
+      <div class="method-step">
+        <h4 class="step-title">Sesiones aplicadas</h4>
+        <p class="step-text">No teoría suelta. Cada sesión termina con ejercicios del tipo exacto que enfrentarás en tus exámenes o proyectos.</p>
+      </div>
+      <div class="method-step">
+        <h4 class="step-title">Soporte continuo</h4>
+        <p class="step-text">Acceso por WhatsApp entre sesiones para dudas rápidas. No te quedas atorado hasta la próxima clase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing" id="precios">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Inversión</span>
+      <h2 class="display-lg">
+        Precios claros. <span class="serif">Resultados visibles.</span>
+      </h2>
+      <p class="lead">
+        Elige el formato que mejor se ajuste a tu ritmo. Primera sesión a mitad de precio.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Sesión individual</div>
+        <div class="price-sub">Ideal para dudas puntuales</div>
+        <div class="price-amount">$300</div>
+        <div class="price-suffix">MXN · 1 hora</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li class="price-feature">Sesión de 1 hora completa</li>
+          <li class="price-feature">Modalidad online o presencial</li>
+          <li class="price-feature">Material de apoyo incluido</li>
+          <li class="price-feature">Sin compromiso de continuidad</li>
+        </ul>
+        <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20me%20interesa%20una%20sesi%C3%B3n%20individual." class="price-btn">Reservar sesión</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-badge">Más popular</div>
+        <div class="price-name">Paquete mensual</div>
+        <div class="price-sub">El favorito de mis estudiantes</div>
+        <div class="price-amount">$1,000</div>
+        <div class="price-suffix">MXN · 4 sesiones / mes</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li class="price-feature">4 sesiones de 1 hora</li>
+          <li class="price-feature">Plan de estudio personalizado</li>
+          <li class="price-feature">Soporte por WhatsApp entre sesiones</li>
+          <li class="price-feature">Ejercicios y material exclusivo</li>
+          <li class="price-feature">Ahorro de 17% vs. individuales</li>
+        </ul>
+        <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20quiero%20el%20paquete%20mensual." class="price-btn">Empezar paquete</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-name">Asesoría intensiva</div>
+        <div class="price-sub">Para exámenes y entregas</div>
+        <div class="price-amount">$1,200</div>
+        <div class="price-suffix">MXN · sesión de 4 horas</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li class="price-feature">Sesión maratón de 4 horas</li>
+          <li class="price-feature">Preparación de examen final</li>
+          <li class="price-feature">Defensa de proyecto o tesis</li>
+          <li class="price-feature">Repaso completo de unidad</li>
+        </ul>
+        <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20necesito%20una%20asesor%C3%ADa%20intensiva." class="price-btn">Reservar intensivo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Lo que dicen mis estudiantes</span>
+      <h2 class="display-lg">
+        Resultados que <span class="serif">cambian carreras.</span>
+      </h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="testi-quote">"Llegué con Angelo después de reprobar dos parciales de Cálculo. Me explicó desde la base que yo no dominaba bien. Pasé el final con 9."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Mariana R.</div>
+            <div class="testi-role">Ingeniería · UAC</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <p class="testi-quote">"Mi hijo iba a reprobar matemáticas. Después de un mes con Angelo, no solo aprobó — ahora le interesa la materia. Recomendado al 100%."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SL</div>
+          <div>
+            <div class="testi-name">Sandra L.</div>
+            <div class="testi-role">Mamá de estudiante de secundaria</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <p class="testi-quote">"Llevaba meses intentando aprender Python sin avanzar. En 3 sesiones entendí más que en todo lo anterior. Por fin tiene sentido."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CJ</div>
+          <div>
+            <div class="testi-name">Carlos J.</div>
+            <div class="testi-role">Profesional en transición</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-intro">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="display-lg">
+        Lo que <span class="serif">probablemente</span> te preguntas.
+      </h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Las sesiones son online o presenciales?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Ambas opciones disponibles. Las sesiones online las hago por Google Meet o Zoom, con pizarra digital compartida. Las presenciales en Campeche, en zona acordada (cafetería, biblioteca, o domicilio si aplica).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Cómo se paga?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Acepto transferencia SPEI, Mercado Pago y efectivo en sesiones presenciales. Las primeras sesiones se pagan por adelantado; con estudiantes recurrentes establecemos un esquema mensual.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Qué pasa si necesito cancelar una sesión?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Cancelaciones con 24 horas de anticipación no tienen costo y se reagendan sin problema. Cancelaciones con menos tiempo tienen un cargo de 50% para reservar el espacio.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Puedo tomar sesiones grupales con mis compañeros?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Sí. Para grupos de 3 a 5 personas de la misma materia, el precio es de $200 por persona por sesión. Es una excelente opción para compañeros de carrera que están en la misma materia.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Trabajas con estudiantes adultos o solo jóvenes?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Trabajo con cualquier edad. He tenido estudiantes desde 12 años hasta profesionales adultos haciendo transición de carrera. El método se adapta al nivel y objetivo, no a la edad.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          ¿Cómo agendamos la primera sesión?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Escríbeme por WhatsApp al 981-142-6154. En el primer mensaje cuéntame tu nivel, materia y si tienes algún examen próximo. Te respondo en menos de 2 horas y agendamos el diagnóstico gratuito de 30 minutos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final" id="contacto">
+  <div class="cta-final-inner">
+    <span class="eyebrow">Empecemos</span>
+    <h2 class="display-xl">
+      Tu próxima nota alta <span class="serif">empieza aquí.</span>
+    </h2>
+    <p class="lead">
+      30 minutos gratis para que veas mi método, identifiquemos tu meta y armemos un plan. Sin compromiso.
+    </p>
+    <div class="hero-actions" style="margin-bottom: 0;">
+      <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico." class="btn-primary">
+        Escríbeme por WhatsApp
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="tel:+529811426154" class="btn-secondary">
+        Llamar al 981-142-6154
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo-mark">
+        <img src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="Angelo Azcorra">
+        <span class="logo-text">Angelo Azcorra <span>· Academy</span></span>
+      </a>
+      <p class="footer-tagline">
+        Asesorías académicas profesionales en Campeche. De secundaria a universidad, en ciencias exactas, programación e ingeniería, y ciencias biomédicas.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Servicio</h4>
+      <ul>
+        <li><a href="#materias">Materias</a></li>
+        <li><a href="#metodo">Método</a></li>
+        <li><a href="#precios">Precios</a></li>
+        <li><a href="#contacto">Agendar</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/529811426154">WhatsApp</a></li>
+        <li><a href="mailto:angelo.azcorra@devprojects.space">Email</a></li>
+        <li><a href="tel:+529811426154">981-142-6154</a></li>
+        <li><span>Campeche, México</span></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Redes</h4>
+      <ul>
+        <li><a href="https://linkedin.com/in/angelo-azc">LinkedIn</a></li>
+        <li><a href="https://github.com/GumBuddy">GitHub</a></li>
+        <li><a href="https://portafolio.devprojects.space">Portafolio</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cross-link al portafolio profesional -->
+  <div class="cross-link">
+    <div class="cross-link-text">
+      <strong>¿Representas a una empresa?</strong> También ofrezco servicios profesionales de diseño y desarrollo de software.
+    </div>
+    <a href="https://portafolio.devprojects.space">Ver portafolio profesional →</a>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Angelo Duriel Azcorra Moguel. Todos los derechos reservados.</div>
+    <div>Hecho con dedicación en Campeche, México</div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<a href="https://wa.me/529811426154?text=Hola%20Angelo,%20me%20interesa%20una%20asesor%C3%ADa." class="whatsapp-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // ===== Animación reveal on scroll =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.subject-card, .price-card, .testi-card, .method-step, .about-text, .about-portrait, .faq-item').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+
+  // ===== Smooth scroll =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ===== FAQ accordion =====
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    });
+  });
+
+  // ===== Nav blur intensity on scroll =====
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.04)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
