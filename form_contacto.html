@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contáctame · Angelo Azcorra Academy</title>
+<meta name="description" content="Cuéntame sobre tu necesidad académica. 5 minutos para armar tu plan personalizado.">
+<link rel="icon" type="image/svg+xml" href="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- html2canvas para exportar como imagen -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<style>
+  :root {
+    --bg: #FBFBFD;
+    --bg-elevated: #FFFFFF;
+    --bg-tinted: #F5F5F7;
+    --bg-deep: #1D1D1F;
+    --ink: #1D1D1F;
+    --ink-soft: #6E6E73;
+    --ink-faint: #86868B;
+    --line: #D2D2D7;
+    --line-soft: #E8E8ED;
+    --brand: #1E4A8C;
+    --brand-soft: #4A7BC8;
+    --accent: #0071E3;
+    --gold: #B98B3F;
+    --success: #34C759;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 16px 40px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.08), 0 32px 80px rgba(0,0,0,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    font-family: 'Geist', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    min-height: 100vh;
+  }
+  .serif { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-weight: 400; }
+
+  /* ============ NAVBAR ============ */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(251, 251, 253, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .logo-mark img { height: 30px; width: auto; }
+  .logo-text {
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .logo-text span { color: var(--ink-soft); font-weight: 300; }
+  .nav-back {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--brand); }
+
+  /* ============ CONTAINER ============ */
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  /* ============ HEADER ============ */
+  .form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .form-header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+  .form-header h1 .serif {
+    color: var(--brand);
+  }
+  .form-header p {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ============ PROGRESS ============ */
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .progress-dot {
+    width: 24px;
+    height: 6px;
+    background: var(--line);
+    border-radius: 3px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .progress-dot.active {
+    background: var(--brand);
+    width: 32px;
+  }
+  .progress-dot.done {
+    background: var(--brand-soft);
+  }
+  .progress-label {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    margin-bottom: 2rem;
+  }
+  .progress-label strong {
+    color: var(--brand);
+    font-weight: 600;
+  }
+
+  /* ============ STEPS ============ */
+  .step {
+    display: none;
+    animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .step.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .step-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .step-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+  }
+  .step-title .serif {
+    color: var(--brand);
+  }
+  .step-subtitle {
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* ============ FORM ELEMENTS ============ */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+  .form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.005em;
+  }
+  .form-label .optional {
+    color: var(--ink-faint);
+    font-weight: 400;
+    font-size: 0.78rem;
+    margin-left: 0.4rem;
+  }
+  .form-input,
+  .form-textarea,
+  .form-select {
+    width: 100%;
+    padding: 0.95rem 1.1rem;
+    background: var(--bg-tinted);
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+    color: var(--ink);
+    transition: all 0.2s;
+    letter-spacing: -0.005em;
+  }
+  .form-input:focus,
+  .form-textarea:focus,
+  .form-select:focus {
+    outline: none;
+    background: var(--bg-elevated);
+    border-color: var(--brand);
+    box-shadow: 0 0 0 4px rgba(30, 74, 140, 0.1);
+  }
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: var(--ink-faint);
+  }
+  .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Geist', sans-serif;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  /* CHIPS (radio/multi-select) */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    padding: 0.7rem 1.1rem;
+    background: var(--bg-tinted);
+    border: 1px solid transparent;
+    border-radius: 980px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .chip:hover {
+    background: var(--line-soft);
+  }
+  .chip.selected {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+  }
+  .chip.selected::before {
+    content: '✓';
+    font-weight: 700;
+  }
+
+  /* ============ NAV BUTTONS ============ */
+  .nav-buttons {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+  .btn {
+    padding: 1rem 1.6rem;
+    border-radius: 980px;
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.01em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: white;
+    flex: 1;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover {
+    background: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30, 74, 140, 0.25);
+  }
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn-secondary:hover {
+    background: var(--bg-tinted);
+  }
+  .btn-arrow {
+    transition: transform 0.3s;
+  }
+  .btn:hover .btn-arrow {
+    transform: translateX(3px);
+  }
+
+  /* ============ SUMMARY ============ */
+  .summary-screen {
+    display: none;
+    animation: fadeIn 0.5s;
+  }
+  .summary-screen.active { display: block; }
+
+  .summary-success {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 30px rgba(52, 199, 89, 0.3);
+    animation: scaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  @keyframes scaleIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  .summary-success h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+  }
+  .summary-success h2 .serif { color: var(--brand); }
+  .summary-success p {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ============ SUMMARY CARD — Identity Card Style ============ */
+  .summary-card {
+    background: linear-gradient(155deg, #FCFCFD 0%, #F2F4F8 60%, #EAEEF5 100%);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--line-soft);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  .summary-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 5%, rgba(0, 113, 227, 0.07) 0%, transparent 40%),
+      radial-gradient(circle at 90% 95%, rgba(185, 139, 63, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  /* Esquinas decorativas estilo credencial */
+  .summary-card::after {
+    content: '';
+    position: absolute;
+    top: 0.8rem; right: 0.8rem;
+    width: 20px; height: 20px;
+    border-top: 1.5px solid var(--brand);
+    border-right: 1.5px solid var(--brand);
+    opacity: 0.3;
+  }
+  .summary-corner-bl {
+    position: absolute;
+    bottom: 0.8rem; left: 0.8rem;
+    width: 20px; height: 20px;
+    border-bottom: 1.5px solid var(--brand);
+    border-left: 1.5px solid var(--brand);
+    opacity: 0.3;
+  }
+
+  /* ===== HEADER ===== */
+  .summary-card-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px dashed rgba(0,0,0,0.1);
+  }
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .summary-card-logo {
+    width: 36px;
+    height: 36px;
+    filter: drop-shadow(0 2px 6px rgba(30, 74, 140, 0.15));
+  }
+  .header-brand-text {
+    line-height: 1.1;
+  }
+  .header-brand-name {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .header-brand-sub {
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+  }
+  .header-folio {
+    text-align: right;
+    line-height: 1.2;
+  }
+  .folio-label {
+    font-size: 0.6rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .folio-number {
+    font-family: 'Geist', sans-serif;
+    font-size: 0.85rem;
+    color: var(--brand);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== DOCUMENT TITLE ===== */
+  .document-title-wrap {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem 0;
+  }
+  .document-title-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .document-title {
+    font-family: 'Geist', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .document-title .serif {
+    color: var(--brand);
+    font-size: 1.7rem;
+  }
+  .document-date {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+
+  /* ===== IDENTITY BLOCK ===== */
+  .identity-block {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .identity-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(30, 74, 140, 0.25);
+  }
+  .identity-info {
+    flex: 1;
+    min-width: 0;
+  }
+  .identity-name {
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.15rem;
+    line-height: 1.15;
+  }
+  .identity-relation {
+    font-size: 0.72rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .identity-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  .identity-contact span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* ===== GRID DE SECCIONES ===== */
+  .summary-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .summary-block {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .summary-block.full {
+    grid-column: span 2;
+  }
+
+  .block-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--brand);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(30, 74, 140, 0.1);
+  }
+
+  .block-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 0.5rem;
+    padding: 0.3rem 0;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+  .block-row:not(:last-child) {
+    border-bottom: 1px dotted rgba(0,0,0,0.05);
+  }
+  .block-label {
+    color: var(--ink-faint);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    padding-top: 0.05rem;
+  }
+  .block-value {
+    color: var(--ink);
+    font-weight: 500;
+    word-break: break-word;
+  }
+  .block-value.empty {
+    color: var(--ink-faint);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  /* Chip-style values para áreas seleccionadas */
+  .block-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.2rem;
+  }
+  .block-chip {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    background: rgba(30, 74, 140, 0.08);
+    color: var(--brand);
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    border: 1px solid rgba(30, 74, 140, 0.12);
+  }
+
+  /* ===== MENSAJE ADICIONAL ===== */
+  .summary-message {
+    position: relative;
+    z-index: 2;
+    background: rgba(185, 139, 63, 0.06);
+    border: 1px solid rgba(185, 139, 63, 0.2);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .summary-message .block-title {
+    color: var(--gold);
+    border-bottom-color: rgba(185, 139, 63, 0.2);
+  }
+  .message-text {
+    font-size: 0.85rem;
+    color: var(--ink);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  .summary-footer {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .summary-quote {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+  .summary-signature {
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+  }
+  .summary-signature strong {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  /* ACTION BUTTONS */
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 1.1rem 1.5rem;
+    border-radius: 980px;
+    font-family: 'Geist', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  }
+  .btn-whatsapp:hover {
+    background: #1FBE5B;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+  }
+  .btn-whatsapp svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+  }
+  .btn-download {
+    background: var(--bg-elevated);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    padding: 1rem 1.5rem;
+    border-radius: 980px;
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .btn-download:hover {
+    background: var(--bg-tinted);
+    transform: translateY(-1px);
+  }
+  .btn-restart {
+    background: transparent;
+    color: var(--ink-soft);
+    border: none;
+    padding: 0.9rem;
+    font-family: 'Geist', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .btn-restart:hover {
+    color: var(--ink);
+  }
+
+  /* Action hint */
+  .action-hint {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    line-height: 1.5;
+  }
+  .action-hint strong { color: var(--ink-soft); }
+
+  /* ============ ERROR ============ */
+  .field-error {
+    color: #DC2626;
+    font-size: 0.82rem;
+    margin-top: 0.45rem;
+    display: none;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    animation: shake 0.3s ease-in-out;
+  }
+  .field-error::before {
+    content: '⚠';
+    font-size: 0.85rem;
+  }
+  .form-group.has-error .field-error {
+    display: flex;
+  }
+  .form-group.has-error .form-input,
+  .form-group.has-error .form-textarea {
+    border-color: #DC2626 !important;
+    background: #FEF2F2 !important;
+  }
+  .form-group.has-error .form-input:focus,
+  .form-group.has-error .form-textarea:focus {
+    box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1) !important;
+  }
+  /* Estado válido (verde sutil) */
+  .form-group.is-valid .form-input,
+  .form-group.is-valid .form-textarea {
+    border-color: rgba(52, 199, 89, 0.4);
+  }
+  /* Chips obligatorios sin selección */
+  .chips.required-error {
+    padding: 0.5rem;
+    background: #FEF2F2;
+    border-radius: 12px;
+    border: 1px dashed #DC2626;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+  .error-msg {
+    color: #DC2626;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .error-msg.show { display: block; }
+  .form-input.error,
+  .form-textarea.error,
+  .form-select.error {
+    border-color: #DC2626;
+    background: #FEF2F2;
+  }
+
+  /* ============ LOADING ============ */
+  .loading-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .loading-overlay.active { display: flex; }
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--line);
+    border-top-color: var(--brand);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  .loading-text {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  /* ============ MOBILE ============ */
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem 5rem; }
+    .step-card { padding: 1.8rem 1.3rem; }
+    .summary-card { padding: 1.5rem 1.2rem; }
+    .form-row { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    .form-header h1 { font-size: 2rem; }
+    .step-title { font-size: 1.35rem; }
+
+    /* Summary card mobile */
+    .summary-grid { grid-template-columns: 1fr; }
+    .identity-block { flex-direction: column; text-align: center; gap: 0.8rem; }
+    .identity-contact { justify-content: center; }
+    .block-row { grid-template-columns: 1fr; gap: 0.1rem; padding: 0.4rem 0; }
+    .block-label { font-size: 0.65rem; }
+    .document-title { font-size: 1.4rem; }
+    .document-title .serif { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo-mark" id="logoLink">
+      <img src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="Angelo Azcorra">
+      <span class="logo-text">Angelo Azcorra <span>· Academy</span></span>
+    </a>
+    <a href="academy.devprojects.space.html" class="nav-back" id="navBack">
+      ← Volver
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="form-header" id="formHeader">
+    <span class="eyebrow">Formulario de contacto</span>
+    <h1>Cuéntame <span class="serif">sobre ti</span>.</h1>
+    <p>5 minutos para que pueda armarte un plan personalizado antes de nuestra primera conversación.</p>
+  </div>
+
+  <!-- PROGRESS -->
+  <div id="progressContainer">
+    <div class="progress-wrap">
+      <div class="progress-dot active"></div>
+      <div class="progress-dot"></div>
+      <div class="progress-dot"></div>
+      <div class="progress-dot"></div>
+      <div class="progress-dot"></div>
+    </div>
+    <div class="progress-label">Paso <strong id="currentStep">1</strong> de 5</div>
+  </div>
+
+  <!-- FORMULARIO -->
+  <form id="prospectForm" onsubmit="return false;">
+
+    <!-- PASO 1: CONTACTO -->
+    <div class="step active" data-step="1">
+      <div class="step-card">
+        <h2 class="step-title">¿Quién <span class="serif">eres</span>?</h2>
+        <p class="step-subtitle">Empezamos con lo básico para poder contactarte.</p>
+
+        <div class="form-group">
+          <label class="form-label">¿Quién está llenando este formulario?</label>
+          <div class="chips" data-input="quien_llena">
+            <div class="chip" data-value="El estudiante">Soy el estudiante</div>
+            <div class="chip" data-value="Padre/Madre">Soy el padre/madre</div>
+            <div class="chip" data-value="Tutor/Familiar">Soy tutor/familiar</div>
+            <div class="chip" data-value="Otro">Otro</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="nombre_contacto">Tu nombre completo</label>
+          <input
+            type="text"
+            class="form-input"
+            id="nombre_contacto"
+            placeholder="Ej: María González"
+            data-validate="name"
+            autocomplete="name"
+            maxlength="60"
+            required>
+          <div class="field-error" id="err_nombre_contacto"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="whatsapp_contacto">Tu WhatsApp</label>
+            <input
+              type="tel"
+              class="form-input"
+              id="whatsapp_contacto"
+              placeholder="981-142-6154"
+              data-validate="phone"
+              autocomplete="tel"
+              inputmode="numeric"
+              maxlength="12"
+              required>
+            <div class="field-error" id="err_whatsapp_contacto"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email_contacto">Tu email <span class="optional">(opcional)</span></label>
+            <input
+              type="email"
+              class="form-input"
+              id="email_contacto"
+              placeholder="tucorreo@ejemplo.com"
+              data-validate="email"
+              autocomplete="email"
+              maxlength="80">
+            <div class="field-error" id="err_email_contacto"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-primary" onclick="nextStep()">
+          Continuar <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PASO 2: ESTUDIANTE -->
+    <div class="step" data-step="2">
+      <div class="step-card">
+        <h2 class="step-title">Sobre el <span class="serif">estudiante</span>.</h2>
+        <p class="step-subtitle" id="step2_subtitle">Información académica para entender mejor el contexto.</p>
+
+        <div class="form-group" id="nombre_estudiante_group">
+          <label class="form-label" for="nombre_estudiante">Nombre del estudiante</label>
+          <input
+            type="text"
+            class="form-input"
+            id="nombre_estudiante"
+            placeholder="Ej: Pedro González"
+            data-validate="name"
+            autocomplete="off"
+            maxlength="60">
+          <div class="field-error" id="err_nombre_estudiante"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="edad_estudiante">Edad</label>
+            <input
+              type="number"
+              class="form-input"
+              id="edad_estudiante"
+              placeholder="Ej: 18"
+              data-validate="age"
+              inputmode="numeric"
+              step="1"
+              min="10"
+              max="80"
+              maxlength="2">
+            <div class="field-error" id="err_edad_estudiante"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="institucion">Institución <span class="optional">(opcional)</span></label>
+            <input
+              type="text"
+              class="form-input"
+              id="institucion"
+              placeholder="Ej: UAC, ITCAM"
+              maxlength="80">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Nivel académico actual</label>
+          <div class="chips" data-input="nivel">
+            <div class="chip" data-value="Secundaria">Secundaria</div>
+            <div class="chip" data-value="Preparatoria">Preparatoria</div>
+            <div class="chip" data-value="Universidad">Universidad</div>
+            <div class="chip" data-value="Profesional">Profesional/Otro</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="grado">Grado o semestre</label>
+          <input
+            type="text"
+            class="form-input"
+            id="grado"
+            placeholder="Ej: 3er grado / 5to semestre"
+            maxlength="40">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="carrera">Carrera o área <span class="optional">(si aplica)</span></label>
+          <input
+            type="text"
+            class="form-input"
+            id="carrera"
+            placeholder="Ej: Medicina, Ingeniería en Sistemas, Enfermería"
+            data-validate="text-soft"
+            maxlength="80">
+          <div class="field-error" id="err_carrera"></div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Atrás</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep()">
+          Continuar <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PASO 3: NECESIDAD -->
+    <div class="step" data-step="3">
+      <div class="step-card">
+        <h2 class="step-title">¿Qué <span class="serif">necesitas</span>?</h2>
+        <p class="step-subtitle">Cuéntame en qué materia o tema te puedo ayudar.</p>
+
+        <div class="form-group">
+          <label class="form-label">Áreas de apoyo (puedes elegir varias)</label>
+          <div class="chips multi" data-input="areas">
+            <div class="chip" data-value="Matemáticas">Matemáticas</div>
+            <div class="chip" data-value="Física">Física</div>
+            <div class="chip" data-value="Química">Química</div>
+            <div class="chip" data-value="Programación">Programación</div>
+            <div class="chip" data-value="Bases de datos">Bases de datos</div>
+            <div class="chip" data-value="Ingeniería">Ingeniería (general)</div>
+            <div class="chip" data-value="Bioquímica">Bioquímica</div>
+            <div class="chip" data-value="Biología celular">Biología celular</div>
+            <div class="chip" data-value="Anatomía/Fisiología">Anatomía/Fisiología</div>
+            <div class="chip" data-value="Microbiología">Microbiología</div>
+            <div class="chip" data-value="Estadística">Estadística</div>
+            <div class="chip" data-value="Otra">Otra</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="materia_especifica">Materia o tema específico</label>
+          <input
+            type="text"
+            class="form-input"
+            id="materia_especifica"
+            placeholder="Ej: Cálculo I - Tema de derivadas"
+            maxlength="120">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Cuál es tu situación actual?</label>
+          <div class="chips" data-input="situacion">
+            <div class="chip" data-value="Tengo examen próximo">Tengo examen próximo</div>
+            <div class="chip" data-value="Voy a reprobar">Voy a reprobar</div>
+            <div class="chip" data-value="Ya reprobé">Ya reprobé</div>
+            <div class="chip" data-value="Quiero mejorar mi nota">Quiero mejorar mi nota</div>
+            <div class="chip" data-value="No entiendo desde el inicio">No entiendo desde el inicio</div>
+            <div class="chip" data-value="Apoyo para tesis/proyecto">Apoyo para tesis/proyecto</div>
+            <div class="chip" data-value="Preparación general">Preparación general</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="fecha_examen">Fecha de examen o entrega <span class="optional">(si aplica)</span></label>
+          <input
+            type="text"
+            class="form-input"
+            id="fecha_examen"
+            placeholder="Ej: 15 de junio"
+            maxlength="40">
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Atrás</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep()">
+          Continuar <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PASO 4: DISPONIBILIDAD -->
+    <div class="step" data-step="4">
+      <div class="step-card">
+        <h2 class="step-title">¿Cuándo y <span class="serif">cómo</span>?</h2>
+        <p class="step-subtitle">Tu disponibilidad y modalidad preferida.</p>
+
+        <div class="form-group">
+          <label class="form-label">Modalidad preferida</label>
+          <div class="chips" data-input="modalidad">
+            <div class="chip" data-value="Online">💻 Online</div>
+            <div class="chip" data-value="Presencial">📍 Presencial</div>
+            <div class="chip" data-value="Cualquiera">Cualquiera de las dos</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Días que tienes disponibles (selecciona los que apliquen)</label>
+          <div class="chips multi" data-input="dias">
+            <div class="chip" data-value="Lunes">Lun</div>
+            <div class="chip" data-value="Martes">Mar</div>
+            <div class="chip" data-value="Miércoles">Mié</div>
+            <div class="chip" data-value="Jueves">Jue</div>
+            <div class="chip" data-value="Viernes">Vie</div>
+            <div class="chip" data-value="Sábado">Sáb</div>
+            <div class="chip" data-value="Domingo">Dom</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Horario preferido</label>
+          <div class="chips multi" data-input="horario">
+            <div class="chip" data-value="Mañana (8am-12pm)">🌅 Mañana (8am-12pm)</div>
+            <div class="chip" data-value="Tarde (12pm-5pm)">☀️ Tarde (12pm-5pm)</div>
+            <div class="chip" data-value="Noche (5pm-9pm)">🌙 Noche (5pm-9pm)</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Con qué frecuencia te gustaría tomar sesiones?</label>
+          <div class="chips" data-input="frecuencia">
+            <div class="chip" data-value="1 vez por semana">1 vez por semana</div>
+            <div class="chip" data-value="2 veces por semana">2 veces por semana</div>
+            <div class="chip" data-value="3 o más veces por semana">3 o más por semana</div>
+            <div class="chip" data-value="Intensivo (varios días seguidos)">Intensivo</div>
+            <div class="chip" data-value="Aún no lo sé">Aún no lo sé</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Atrás</button>
+        <button type="button" class="btn btn-primary" onclick="nextStep()">
+          Continuar <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PASO 5: OBJETIVO -->
+    <div class="step" data-step="5">
+      <div class="step-card">
+        <h2 class="step-title">Tu <span class="serif">objetivo</span>.</h2>
+        <p class="step-subtitle">Para que pueda diseñar tu plan a la medida.</p>
+
+        <div class="form-group">
+          <label class="form-label">¿Cuál es tu meta principal?</label>
+          <div class="chips" data-input="meta">
+            <div class="chip" data-value="Aprobar la materia">Aprobar la materia</div>
+            <div class="chip" data-value="Mejorar mi nota">Mejorar mi nota</div>
+            <div class="chip" data-value="Entender mejor">Entender mejor el tema</div>
+            <div class="chip" data-value="Preparar examen específico">Preparar examen específico</div>
+            <div class="chip" data-value="Recuperar semestre">Recuperar semestre</div>
+            <div class="chip" data-value="Avanzar más rápido">Avanzar más rápido</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Por cuánto tiempo crees que necesitarás asesorías?</label>
+          <div class="chips" data-input="duracion">
+            <div class="chip" data-value="Solo 1-2 sesiones puntuales">1-2 sesiones puntuales</div>
+            <div class="chip" data-value="1 mes">1 mes</div>
+            <div class="chip" data-value="2-3 meses">2-3 meses</div>
+            <div class="chip" data-value="Semestre completo">Semestre completo</div>
+            <div class="chip" data-value="Aún no lo sé">Aún no lo sé</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">¿Cómo me conociste?</label>
+          <div class="chips" data-input="fuente">
+            <div class="chip" data-value="Recomendación">Recomendación</div>
+            <div class="chip" data-value="Facebook">Facebook</div>
+            <div class="chip" data-value="Instagram">Instagram</div>
+            <div class="chip" data-value="TikTok">TikTok</div>
+            <div class="chip" data-value="WhatsApp">WhatsApp</div>
+            <div class="chip" data-value="Google">Google</div>
+            <div class="chip" data-value="Otro">Otro</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="mensaje_adicional">Mensaje adicional <span class="optional">(opcional)</span></label>
+          <textarea
+            class="form-textarea"
+            id="mensaje_adicional"
+            placeholder="Algo más que quieras contarme..."
+            maxlength="500"></textarea>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="btn btn-secondary" onclick="prevStep()">← Atrás</button>
+        <button type="button" class="btn btn-primary" onclick="submitForm()">
+          Ver resumen <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- PANTALLA DE RESUMEN -->
+  <div class="summary-screen" id="summaryScreen">
+
+    <div class="summary-success">
+      <div class="success-icon">✓</div>
+      <h2>Tu carta está <span class="serif">lista</span>.</h2>
+      <p>Revisa los datos abajo y envíalos por WhatsApp. Te respondo en menos de 2 horas para empezar.</p>
+    </div>
+
+    <!-- ESTA TARJETA SE EXPORTA COMO IMAGEN -->
+    <div class="summary-card" id="summaryCard">
+      <div class="summary-corner-bl"></div>
+
+      <!-- HEADER: Marca + Folio -->
+      <div class="summary-card-header">
+        <div class="header-brand">
+          <img class="summary-card-logo" src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="Angelo Azcorra">
+          <div class="header-brand-text">
+            <div class="header-brand-name">Angelo Azcorra</div>
+            <div class="header-brand-sub">Academy</div>
+          </div>
+        </div>
+        <div class="header-folio">
+          <div class="folio-label">Folio</div>
+          <div class="folio-number" id="folioNumber">ACA-2026-0000</div>
+        </div>
+      </div>
+
+      <!-- TÍTULO DEL DOCUMENTO -->
+      <div class="document-title-wrap">
+        <div class="document-title-eyebrow">Documento personal</div>
+        <div class="document-title">Carta de <span class="serif">presentación</span></div>
+        <div class="document-date" id="summaryDate"></div>
+      </div>
+
+      <!-- BLOQUE DE IDENTIDAD -->
+      <div class="identity-block">
+        <div class="identity-avatar" id="avatarInitials">AA</div>
+        <div class="identity-info">
+          <div class="identity-name" id="r_nombre_principal">—</div>
+          <div class="identity-relation" id="r_quien_llena">—</div>
+          <div class="identity-contact">
+            <span>📱 <strong id="r_whatsapp">—</strong></span>
+            <span id="r_email_wrap" style="display:none;">📧 <span id="r_email">—</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRID DE INFO -->
+      <div class="summary-grid">
+
+        <!-- ACADÉMICO -->
+        <div class="summary-block">
+          <div class="block-title">🎓 Académico</div>
+          <div class="block-row">
+            <div class="block-label">Nivel</div>
+            <div class="block-value" id="r_nivel">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Grado</div>
+            <div class="block-value" id="r_grado">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Edad</div>
+            <div class="block-value" id="r_edad">—</div>
+          </div>
+          <div class="block-row" id="row_carrera">
+            <div class="block-label">Carrera</div>
+            <div class="block-value" id="r_carrera">—</div>
+          </div>
+          <div class="block-row" id="row_institucion">
+            <div class="block-label">Inst.</div>
+            <div class="block-value" id="r_institucion">—</div>
+          </div>
+        </div>
+
+        <!-- OBJETIVO -->
+        <div class="summary-block">
+          <div class="block-title">🎯 Objetivo</div>
+          <div class="block-row">
+            <div class="block-label">Meta</div>
+            <div class="block-value" id="r_meta">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Duración</div>
+            <div class="block-value" id="r_duracion">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Situación</div>
+            <div class="block-value" id="r_situacion">—</div>
+          </div>
+          <div class="block-row" id="row_fecha_examen">
+            <div class="block-label">Examen</div>
+            <div class="block-value" id="r_fecha">—</div>
+          </div>
+        </div>
+
+        <!-- NECESIDAD (full width para los chips) -->
+        <div class="summary-block full">
+          <div class="block-title">📚 Materias de interés</div>
+          <div class="block-chips" id="r_areas_chips">
+            <span class="block-value empty" id="r_areas_empty">No especificadas</span>
+          </div>
+          <div class="block-row" id="row_materia" style="margin-top: 0.5rem;">
+            <div class="block-label">Tema</div>
+            <div class="block-value" id="r_materia">—</div>
+          </div>
+        </div>
+
+        <!-- DISPONIBILIDAD -->
+        <div class="summary-block">
+          <div class="block-title">⏰ Disponibilidad</div>
+          <div class="block-row">
+            <div class="block-label">Modo</div>
+            <div class="block-value" id="r_modalidad">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Días</div>
+            <div class="block-value" id="r_dias">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Horario</div>
+            <div class="block-value" id="r_horario">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Frec.</div>
+            <div class="block-value" id="r_frecuencia">—</div>
+          </div>
+        </div>
+
+        <!-- ORIGEN -->
+        <div class="summary-block">
+          <div class="block-title">📍 Origen</div>
+          <div class="block-row">
+            <div class="block-label">Fuente</div>
+            <div class="block-value" id="r_fuente">—</div>
+          </div>
+          <div class="block-row">
+            <div class="block-label">Fecha</div>
+            <div class="block-value" id="r_fecha_emision">—</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MENSAJE ADICIONAL (full, solo si existe) -->
+      <div class="summary-message" id="section_mensaje" style="display:none;">
+        <div class="block-title">💬 Mensaje del estudiante</div>
+        <div class="message-text" id="r_mensaje">—</div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="summary-footer">
+        <div class="summary-quote">"No solo enseño la materia. Te enseño a pensarla."</div>
+        <div class="summary-signature"><strong>academy.devprojects.space</strong> · 981-142-6154</div>
+      </div>
+
+    </div>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <div class="action-buttons">
+      <button type="button" class="btn-whatsapp" onclick="sendWhatsApp()">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Enviar por WhatsApp
+      </button>
+      <button type="button" class="btn-download" onclick="downloadImage()">
+        📷 Descargar como imagen
+      </button>
+      <button type="button" class="btn-restart" onclick="resetForm()">
+        Empezar de nuevo
+      </button>
+    </div>
+
+    <p class="action-hint">
+      <strong>Tip:</strong> Si el botón de WhatsApp no funciona en tu dispositivo, descarga la imagen y envíamela manualmente al <strong>981-142-6154</strong>.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-text" id="loadingText">Generando imagen...</div>
+</div>
+
+<script>
+  // ============ ESTADO ============
+  let currentStep = 1;
+  const totalSteps = 5;
+  const formData = {};
+
+  // ============ CHIPS (RADIO/MULTI-SELECT) ============
+  document.querySelectorAll('.chips').forEach(group => {
+    const isMulti = group.classList.contains('multi');
+    const inputName = group.dataset.input;
+
+    group.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (isMulti) {
+          chip.classList.toggle('selected');
+          const selected = [...group.querySelectorAll('.chip.selected')].map(c => c.dataset.value);
+          formData[inputName] = selected;
+        } else {
+          group.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+          chip.classList.add('selected');
+          formData[inputName] = chip.dataset.value;
+        }
+
+        // Limpiar error visual del grupo de chips
+        group.classList.remove('required-error');
+        group.closest('.form-group')?.classList.remove('has-error');
+
+        // Reactividad: si la pregunta es "quién llena", ajustar paso 2
+        if (inputName === 'quien_llena') {
+          handleQuienLlenaChange(chip.dataset.value);
+        }
+      });
+    });
+  });
+
+  // ============ LÓGICA DINÁMICA: Si es el estudiante quien llena, no preguntar el nombre dos veces ============
+  function handleQuienLlenaChange(value) {
+    const nombreGroup = document.getElementById('nombre_estudiante_group');
+    const subtitle = document.getElementById('step2_subtitle');
+
+    if (value === 'El estudiante') {
+      nombreGroup.style.display = 'none';
+      subtitle.textContent = 'Cuéntame más sobre tu situación académica.';
+    } else if (value === 'Padre/Madre') {
+      nombreGroup.style.display = '';
+      subtitle.textContent = 'Cuéntame sobre tu hijo/a para entender su contexto académico.';
+    } else if (value === 'Tutor/Familiar') {
+      nombreGroup.style.display = '';
+      subtitle.textContent = 'Cuéntame sobre el estudiante al que apoyas.';
+    } else {
+      nombreGroup.style.display = '';
+      subtitle.textContent = 'Información académica para entender mejor el contexto.';
+    }
+  }
+
+  // ============ NAVEGACIÓN ============
+  function updateProgress() {
+    const dots = document.querySelectorAll('.progress-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.remove('active', 'done');
+      if (i + 1 < currentStep) dot.classList.add('done');
+      else if (i + 1 === currentStep) dot.classList.add('active');
+    });
+    document.getElementById('currentStep').textContent = currentStep;
+  }
+
+  function showStep(step) {
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(step) {
+    const stepEl = document.querySelector(`.step[data-step="${step}"]`);
+    let valid = true;
+    let firstErrorEl = null;
+
+    // 1. Validar todos los inputs con data-validate
+    stepEl.querySelectorAll('[data-validate]').forEach(input => {
+      // Saltar si el grupo padre está oculto (ej: nombre_estudiante cuando "soy el estudiante")
+      const group = input.closest('.form-group');
+      if (group && group.style.display === 'none') return;
+
+      if (!validateField(input, true)) {
+        valid = false;
+        if (!firstErrorEl) firstErrorEl = group;
+      }
+    });
+
+    // 2. Validaciones específicas de chips obligatorios por paso
+    const requiredChips = {
+      1: [{ name: 'quien_llena', message: 'Selecciona quién está llenando el formulario' }],
+      2: [{ name: 'nivel', message: 'Selecciona tu nivel académico' }],
+      3: [
+        { name: 'areas', message: 'Selecciona al menos un área de apoyo' },
+        { name: 'situacion', message: 'Indica tu situación actual' }
+      ],
+      4: [
+        { name: 'modalidad', message: 'Elige una modalidad' }
+      ],
+      5: [
+        { name: 'meta', message: 'Selecciona tu meta principal' }
+      ]
+    };
+
+    const chipsToCheck = requiredChips[step] || [];
+    chipsToCheck.forEach(({ name, message }) => {
+      const chipsGroup = stepEl.querySelector(`.chips[data-input="${name}"]`);
+      if (!chipsGroup) return;
+
+      const value = formData[name];
+      const isEmpty = !value || (Array.isArray(value) && value.length === 0);
+
+      if (isEmpty) {
+        chipsGroup.classList.add('required-error');
+        if (!firstErrorEl) firstErrorEl = chipsGroup.closest('.form-group');
+        valid = false;
+        // Mostrar mensaje temporal arriba
+        showChipError(chipsGroup, message);
+      } else {
+        chipsGroup.classList.remove('required-error');
+      }
+    });
+
+    // 3. Scroll al primer error
+    if (!valid && firstErrorEl) {
+      firstErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    return valid;
+  }
+
+  function showChipError(chipsGroup, message) {
+    const group = chipsGroup.closest('.form-group');
+    if (!group) return;
+    let errEl = group.querySelector('.field-error');
+    if (!errEl) {
+      // Crear elemento de error si no existe
+      errEl = document.createElement('div');
+      errEl.className = 'field-error';
+      group.appendChild(errEl);
+    }
+    errEl.textContent = message;
+    group.classList.add('has-error');
+  }
+
+  function nextStep() {
+    if (!validateStep(currentStep)) return;
+    saveCurrentStepData();
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    }
+  }
+
+  function prevStep() {
+    saveCurrentStepData();
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  // ============ SISTEMA DE VALIDACIÓN ============
+  const validators = {
+    // Nombres: solo letras, espacios, acentos y guiones
+    name: {
+      sanitize: (v) => v.replace(/[^a-záéíóúñA-ZÁÉÍÓÚÑ\s'\-]/g, ''),
+      validate: (v) => {
+        const trimmed = v.trim();
+        if (trimmed.length < 2) return 'Escribe al menos 2 letras';
+        if (trimmed.length > 60) return 'Demasiado largo (máx. 60 caracteres)';
+        if (!/^[a-záéíóúñA-ZÁÉÍÓÚÑ\s'\-]+$/.test(trimmed)) return 'Solo letras y espacios, sin números ni símbolos';
+        if (!/\s/.test(trimmed) && trimmed.length < 3) return 'Por favor escribe nombre y apellido';
+        return null;
+      }
+    },
+    // Teléfono mexicano: 10 dígitos, con auto-formato
+    phone: {
+      sanitize: (v) => {
+        const digits = v.replace(/\D/g, '').slice(0, 10);
+        if (digits.length <= 3) return digits;
+        if (digits.length <= 6) return digits.slice(0, 3) + '-' + digits.slice(3);
+        return digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6);
+      },
+      validate: (v) => {
+        const digits = v.replace(/\D/g, '');
+        if (digits.length === 0) return 'Necesito tu número de WhatsApp';
+        if (digits.length < 10) return `Faltan ${10 - digits.length} dígito${10 - digits.length === 1 ? '' : 's'}`;
+        if (digits.length > 10) return 'Solo 10 dígitos (sin lada de país)';
+        if (!/^\d{10}$/.test(digits)) return 'Solo números';
+        return null;
+      }
+    },
+    // Email opcional pero si se llena, debe ser válido
+    email: {
+      validate: (v) => {
+        const trimmed = v.trim();
+        if (!trimmed) return null; // Opcional
+        if (trimmed.length > 80) return 'Demasiado largo';
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(trimmed)) {
+          return 'Formato inválido (ej: nombre@correo.com)';
+        }
+        return null;
+      }
+    },
+    // Edad: solo enteros entre 10 y 80
+    age: {
+      sanitize: (v) => v.replace(/\D/g, '').slice(0, 2),
+      validate: (v) => {
+        const trimmed = v.trim();
+        if (!trimmed) return null; // Opcional
+        if (!/^\d+$/.test(trimmed)) return 'Solo números enteros';
+        const n = parseInt(trimmed, 10);
+        if (n < 10) return 'Debe ser al menos 10 años';
+        if (n > 80) return 'Edad fuera de rango (máx. 80)';
+        return null;
+      }
+    },
+    // Texto suave: permite letras, números y algunos símbolos (para carreras)
+    'text-soft': {
+      sanitize: (v) => v.replace(/[<>{}[\]\\\/]/g, ''),
+      validate: (v) => {
+        const trimmed = v.trim();
+        if (!trimmed) return null; // Opcional
+        if (trimmed.length > 80) return 'Demasiado largo (máx. 80)';
+        return null;
+      }
+    }
+  };
+
+  function showFieldError(input, message) {
+    const group = input.closest('.form-group');
+    if (!group) return;
+    group.classList.add('has-error');
+    group.classList.remove('is-valid');
+    const errEl = group.querySelector('.field-error');
+    if (errEl) errEl.textContent = message;
+  }
+
+  function clearFieldError(input, markValid = false) {
+    const group = input.closest('.form-group');
+    if (!group) return;
+    group.classList.remove('has-error');
+    if (markValid) group.classList.add('is-valid');
+    else group.classList.remove('is-valid');
+  }
+
+  function validateField(input, showError = true) {
+    const type = input.dataset.validate;
+    if (!type || !validators[type]) return true;
+
+    const validator = validators[type];
+    const value = input.value;
+    const isRequired = input.hasAttribute('required');
+
+    // Si está vacío
+    if (!value.trim()) {
+      if (isRequired) {
+        if (showError) showFieldError(input, 'Este campo es obligatorio');
+        return false;
+      }
+      clearFieldError(input);
+      return true;
+    }
+
+    // Ejecutar validación
+    const errorMsg = validator.validate ? validator.validate(value) : null;
+    if (errorMsg) {
+      if (showError) showFieldError(input, errorMsg);
+      return false;
+    }
+
+    clearFieldError(input, true);
+    return true;
+  }
+
+  // ===== Listeners para inputs con validación =====
+  document.querySelectorAll('[data-validate]').forEach(input => {
+    const type = input.dataset.validate;
+    const validator = validators[type];
+    if (!validator) return;
+
+    // Sanitización en tiempo real (bloquea caracteres inválidos)
+    if (validator.sanitize) {
+      input.addEventListener('input', (e) => {
+        const cursorPos = input.selectionStart;
+        const oldLength = input.value.length;
+        const sanitized = validator.sanitize(input.value);
+        if (sanitized !== input.value) {
+          input.value = sanitized;
+          // Restaurar posición del cursor inteligentemente
+          const newLength = sanitized.length;
+          const diff = newLength - oldLength;
+          input.setSelectionRange(cursorPos + diff, cursorPos + diff);
+        }
+      });
+    }
+
+    // Limpiar error visual mientras escribe (no mostrar errores hasta blur)
+    input.addEventListener('input', () => {
+      input.closest('.form-group')?.classList.remove('has-error');
+    });
+
+    // Validar al perder foco
+    input.addEventListener('blur', () => {
+      validateField(input);
+    });
+
+    // Para inputs numéricos, prevenir entrada inválida con teclado
+    if (type === 'age') {
+      input.addEventListener('keydown', (e) => {
+        const allowedKeys = ['Backspace', 'Delete', 'Tab', 'Escape', 'Enter', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+        const isCtrlCmd = e.ctrlKey || e.metaKey;
+        if (allowedKeys.includes(e.key) || isCtrlCmd) return;
+        if (!/^\d$/.test(e.key)) e.preventDefault();
+      });
+    }
+  });
+
+  // ===== Listeners adicionales para campos sin data-validate =====
+  document.querySelectorAll('.form-input, .form-textarea').forEach(input => {
+    if (input.dataset.validate) return; // Ya tiene listener
+    input.addEventListener('input', () => input.classList.remove('error'));
+  });
+
+  // ============ GUARDAR DATOS ============
+  function saveCurrentStepData() {
+    // Inputs y textareas del paso actual
+    document.querySelectorAll(`.step[data-step="${currentStep}"] input, .step[data-step="${currentStep}"] textarea`).forEach(input => {
+      formData[input.id] = input.value.trim();
+    });
+  }
+
+  // ============ ENVIAR (mostrar resumen) ============
+  function submitForm() {
+    if (!validateStep(currentStep)) return;
+    saveCurrentStepData();
+    populateSummary();
+
+    // Ocultar formulario
+    document.querySelector('form').style.display = 'none';
+    document.getElementById('progressContainer').style.display = 'none';
+    document.getElementById('formHeader').style.display = 'none';
+
+    // Mostrar resumen
+    document.getElementById('summaryScreen').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ============ HELPERS ============
+  function getInitials(name) {
+    if (!name) return 'AA';
+    const parts = name.trim().split(/\s+/).filter(p => p.length > 0);
+    if (parts.length === 0) return 'AA';
+    if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  }
+
+  function generateFolio() {
+    const year = new Date().getFullYear();
+    const random = Math.floor(Math.random() * 9000 + 1000);
+    return `ACA-${year}-${random}`;
+  }
+
+  // Mostrar valor o esconder fila si vacío
+  function setBlockValue(id, value, rowId = null) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const isEmpty = !value || value === '—' || value.trim() === '';
+
+    if (isEmpty) {
+      // Si tiene un row asociado y está vacío, ocultar la fila completa
+      if (rowId) {
+        const row = document.getElementById(rowId);
+        if (row) row.style.display = 'none';
+      } else {
+        el.textContent = '—';
+        el.classList.add('empty');
+      }
+    } else {
+      el.textContent = value;
+      el.classList.remove('empty');
+      if (rowId) {
+        const row = document.getElementById(rowId);
+        if (row) row.style.display = '';
+      }
+    }
+  }
+
+  function populateSummary() {
+    const today = new Date();
+    const fechaStr = today.toLocaleDateString('es-MX', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+    const fechaCorta = today.toLocaleDateString('es-MX', {
+      day: '2-digit', month: '2-digit', year: 'numeric'
+    });
+
+    // Folio
+    document.getElementById('folioNumber').textContent = generateFolio();
+    document.getElementById('summaryDate').textContent = `Emitida el ${fechaStr}`;
+    setBlockValue('r_fecha_emision', fechaCorta);
+
+    // Nombre principal: si es el estudiante quien llena, usar nombre_contacto
+    // Si es padre/tutor, usar nombre del estudiante (si lo dio), si no, el nombre del contacto
+    const isStudentFilling = formData.quien_llena === 'El estudiante';
+    const nombrePrincipal = isStudentFilling
+      ? formData.nombre_contacto
+      : (formData.nombre_estudiante || formData.nombre_contacto);
+
+    document.getElementById('r_nombre_principal').textContent = nombrePrincipal || 'Sin nombre';
+    document.getElementById('avatarInitials').textContent = getInitials(nombrePrincipal);
+
+    // Relación: si es el estudiante quien llena, mostrarlo así
+    let relationLabel;
+    if (isStudentFilling) {
+      relationLabel = 'Estudiante';
+    } else if (formData.quien_llena === 'Padre/Madre') {
+      relationLabel = `Contacto: ${formData.nombre_contacto || ''} · Padre/Madre`;
+    } else if (formData.quien_llena === 'Tutor/Familiar') {
+      relationLabel = `Contacto: ${formData.nombre_contacto || ''} · Tutor`;
+    } else {
+      relationLabel = formData.quien_llena || 'Sin especificar';
+    }
+    document.getElementById('r_quien_llena').textContent = relationLabel;
+
+    // WhatsApp + email
+    document.getElementById('r_whatsapp').textContent = formData.whatsapp_contacto || '—';
+    if (formData.email_contacto) {
+      document.getElementById('r_email').textContent = formData.email_contacto;
+      document.getElementById('r_email_wrap').style.display = 'inline-flex';
+    } else {
+      document.getElementById('r_email_wrap').style.display = 'none';
+    }
+
+    // ACADÉMICO
+    setBlockValue('r_nivel', formData.nivel);
+    setBlockValue('r_grado', formData.grado);
+    setBlockValue('r_edad', formData.edad_estudiante ? `${formData.edad_estudiante} años` : '');
+    setBlockValue('r_carrera', formData.carrera, 'row_carrera');
+    setBlockValue('r_institucion', formData.institucion, 'row_institucion');
+
+    // OBJETIVO
+    setBlockValue('r_meta', formData.meta);
+    setBlockValue('r_duracion', formData.duracion);
+    setBlockValue('r_situacion', formData.situacion);
+    setBlockValue('r_fecha', formData.fecha_examen, 'row_fecha_examen');
+
+    // ÁREAS como chips
+    const areasContainer = document.getElementById('r_areas_chips');
+    const areasEmpty = document.getElementById('r_areas_empty');
+    if (formData.areas && formData.areas.length > 0) {
+      areasContainer.innerHTML = formData.areas
+        .map(a => `<span class="block-chip">${a}</span>`)
+        .join('');
+    } else {
+      areasContainer.innerHTML = '<span class="block-value empty">No especificadas</span>';
+    }
+
+    // Tema específico
+    setBlockValue('r_materia', formData.materia_especifica, 'row_materia');
+
+    // DISPONIBILIDAD
+    setBlockValue('r_modalidad', formData.modalidad);
+    setBlockValue('r_dias', formData.dias && formData.dias.length ? formData.dias.join(', ') : '');
+    setBlockValue('r_horario', formData.horario && formData.horario.length ? formData.horario.join(', ') : '');
+    setBlockValue('r_frecuencia', formData.frecuencia);
+
+    // ORIGEN
+    setBlockValue('r_fuente', formData.fuente);
+
+    // Mensaje adicional
+    const mensaje = (formData.mensaje_adicional || '').trim();
+    if (mensaje) {
+      document.getElementById('section_mensaje').style.display = 'block';
+      document.getElementById('r_mensaje').textContent = mensaje;
+    } else {
+      document.getElementById('section_mensaje').style.display = 'none';
+    }
+  }
+
+  // ============ ENVIAR POR WHATSAPP ============
+  function buildWhatsAppMessage() {
+    const lines = [];
+    lines.push('📋 *NUEVO PROSPECTO - Asesorías Angelo*');
+    lines.push('');
+
+    lines.push('👤 *CONTACTO*');
+    lines.push(`Nombre: ${getVal('nombre_contacto')}`);
+    lines.push(`Relación: ${getVal('quien_llena')}`);
+    lines.push(`WhatsApp: ${getVal('whatsapp_contacto')}`);
+    if (formData.email_contacto) lines.push(`Email: ${formData.email_contacto}`);
+    lines.push('');
+
+    lines.push('🎓 *ESTUDIANTE*');
+    const nombreEst = formData.quien_llena === 'El estudiante'
+      ? formData.nombre_contacto
+      : formData.nombre_estudiante;
+    if (nombreEst) lines.push(`Nombre: ${nombreEst}`);
+    if (formData.edad_estudiante) lines.push(`Edad: ${formData.edad_estudiante} años`);
+    if (formData.nivel) lines.push(`Nivel: ${formData.nivel}`);
+    if (formData.grado) lines.push(`Grado: ${formData.grado}`);
+    if (formData.institucion) lines.push(`Institución: ${formData.institucion}`);
+    if (formData.carrera) lines.push(`Carrera: ${formData.carrera}`);
+    lines.push('');
+
+    lines.push('📚 *NECESIDAD*');
+    if (formData.areas && formData.areas.length) lines.push(`Áreas: ${formData.areas.join(', ')}`);
+    if (formData.materia_especifica) lines.push(`Materia/Tema: ${formData.materia_especifica}`);
+    if (formData.situacion) lines.push(`Situación: ${formData.situacion}`);
+    if (formData.fecha_examen) lines.push(`Examen/Entrega: ${formData.fecha_examen}`);
+    lines.push('');
+
+    lines.push('📅 *DISPONIBILIDAD*');
+    if (formData.modalidad) lines.push(`Modalidad: ${formData.modalidad}`);
+    if (formData.dias && formData.dias.length) lines.push(`Días: ${formData.dias.join(', ')}`);
+    if (formData.horario && formData.horario.length) lines.push(`Horario: ${formData.horario.join(', ')}`);
+    if (formData.frecuencia) lines.push(`Frecuencia: ${formData.frecuencia}`);
+    lines.push('');
+
+    lines.push('🎯 *OBJETIVO*');
+    if (formData.meta) lines.push(`Meta: ${formData.meta}`);
+    if (formData.duracion) lines.push(`Duración: ${formData.duracion}`);
+    if (formData.fuente) lines.push(`Cómo me conoció: ${formData.fuente}`);
+
+    if (formData.mensaje_adicional) {
+      lines.push('');
+      lines.push('💬 *MENSAJE ADICIONAL*');
+      lines.push(formData.mensaje_adicional);
+    }
+
+    lines.push('');
+    lines.push('_Enviado desde el formulario de academy.devprojects.space_');
+
+    return lines.join('\n');
+  }
+
+  function sendWhatsApp() {
+    const message = buildWhatsAppMessage();
+    const url = `https://wa.me/529811426154?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  // ============ DESCARGAR COMO IMAGEN ============
+  async function downloadImage() {
+    const loading = document.getElementById('loadingOverlay');
+    const loadingText = document.getElementById('loadingText');
+    loadingText.textContent = 'Generando imagen...';
+    loading.classList.add('active');
+
+    try {
+      const card = document.getElementById('summaryCard');
+
+      // Esperar un frame para que se muestre el loading
+      await new Promise(r => setTimeout(r, 100));
+
+      const canvas = await html2canvas(card, {
+        scale: 2, // Alta resolución
+        backgroundColor: '#FBFBFD',
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+      });
+
+      // Generar nombre del archivo con fecha
+      const today = new Date();
+      const dateStr = today.toISOString().split('T')[0];
+      const nombre = (formData.nombre_contacto || 'Prospecto').replace(/[^a-zA-Z0-9]/g, '_');
+      const filename = `Prospecto_${nombre}_${dateStr}.png`;
+
+      // Descargar
+      canvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        loading.classList.remove('active');
+      }, 'image/png');
+
+    } catch (err) {
+      loading.classList.remove('active');
+      alert('No se pudo generar la imagen. Intenta usar el botón de WhatsApp.');
+      console.error(err);
+    }
+  }
+
+  // ============ REINICIAR ============
+  function resetForm() {
+    if (!confirm('¿Estás seguro? Se borrará toda la información que llenaste.')) return;
+
+    // Reset estado
+    currentStep = 1;
+    Object.keys(formData).forEach(k => delete formData[k]);
+
+    // Reset inputs
+    document.querySelectorAll('.form-input, .form-textarea').forEach(i => {
+      i.value = '';
+      i.classList.remove('error');
+    });
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+
+    // Limpiar errores visuales
+    document.querySelectorAll('.form-group').forEach(g => {
+      g.classList.remove('has-error', 'is-valid');
+    });
+    document.querySelectorAll('.chips').forEach(c => c.classList.remove('required-error'));
+
+    // Resetear lógica dinámica
+    handleQuienLlenaChange('');
+
+    // Mostrar formulario, ocultar resumen
+    document.querySelector('form').style.display = 'block';
+    document.getElementById('progressContainer').style.display = 'block';
+    document.getElementById('formHeader').style.display = 'block';
+    document.getElementById('summaryScreen').classList.remove('active');
+
+    showStep(1);
+  }
+</script>
+
+</body>
+</html>

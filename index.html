@@ -357,47 +357,173 @@
     gap: 5rem;
     align-items: center;
   }
+  /* ===== ABOUT PORTRAIT — Editorial Identity Plate ===== */
   .about-portrait {
     aspect-ratio: 4/5;
-    background: linear-gradient(135deg, #F0F4FA 0%, #E8EEF7 100%);
+    background: linear-gradient(155deg, #FCFCFD 0%, #F2F4F8 60%, #EAEEF5 100%);
     border-radius: var(--radius-lg);
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    border: 1px solid var(--line-soft);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
+  /* Subtle decorative gradients */
   .about-portrait::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 30% 40%, rgba(0, 113, 227, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 70% 70%, rgba(185, 139, 63, 0.15) 0%, transparent 50%);
+      radial-gradient(circle at 20% 10%, rgba(0, 113, 227, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 90% 90%, rgba(185, 139, 63, 0.10) 0%, transparent 45%);
+    pointer-events: none;
   }
-  .about-portrait-logo {
+  /* Decorative corner marks */
+  .about-portrait::after {
+    content: '';
     position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    opacity: 0.25;
-    filter: grayscale(20%);
+    top: 1rem; right: 1rem;
+    width: 24px; height: 24px;
+    border-top: 1px solid var(--brand);
+    border-right: 1px solid var(--brand);
+    opacity: 0.35;
   }
-  .about-portrait-tag {
+
+  .portrait-corner-bl {
     position: absolute;
-    bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
-    padding: 1rem 1.2rem;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(255,255,255,0.5);
+    bottom: 1rem; left: 1rem;
+    width: 24px; height: 24px;
+    border-bottom: 1px solid var(--brand);
+    border-left: 1px solid var(--brand);
+    opacity: 0.35;
   }
-  .about-portrait-tag-title {
+
+  /* HEADER — Logo + eyebrow */
+  .portrait-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .portrait-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .portrait-logo {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 4px 12px rgba(30, 74, 140, 0.15));
+  }
+
+  /* NAME */
+  .portrait-name {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .portrait-firstname {
+    font-family: 'Geist', sans-serif;
+    font-size: 2.4rem;
     font-weight: 600;
-    font-size: 1rem;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+    line-height: 1;
     margin-bottom: 0.2rem;
   }
-  .about-portrait-tag-sub {
-    font-size: 0.85rem;
+  .portrait-lastname {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.4rem;
+    color: var(--brand);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .portrait-rule {
+    width: 32px;
+    height: 1px;
+    background: var(--ink);
+    margin: 1rem auto;
+    opacity: 0.3;
+  }
+  .portrait-role {
+    font-size: 0.78rem;
     color: var(--ink-soft);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* STATS GRID */
+  .portrait-stats {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .portrait-stat {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(30, 74, 140, 0.04);
+  }
+  .stat-number {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--brand);
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  /* FOOTER — Quote + signature */
+  .portrait-footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .portrait-quote {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.005em;
+  }
+  .portrait-signature {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--brand);
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
 
   .about-text h2 { margin-bottom: 1.5rem; }
@@ -565,23 +691,111 @@
     max-width: 1100px;
     margin: 0 auto;
   }
+  /* ===== PRICING LEVEL SELECTOR ===== */
+  .pricing-levels {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--bg-tinted);
+    border-radius: var(--radius-lg);
+    align-items: center;
+  }
+  .pricing-label {
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 0.95rem;
+    letter-spacing: -0.005em;
+    margin-right: 0.3rem;
+  }
+  .pricing-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .pricing-chip {
+    padding: 0.65rem 1.1rem;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 980px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+  }
+  .pricing-chip:hover {
+    border-color: var(--brand);
+    background: var(--bg-elevated);
+  }
+  .pricing-chip.active {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+    box-shadow: 0 4px 12px rgba(30, 74, 140, 0.25);
+  }
+
+  /* ===== PRICING INFO ===== */
+  .pricing-info {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem 1.5rem;
+    background: rgba(185, 139, 63, 0.05);
+    border: 1px solid rgba(185, 139, 63, 0.15);
+    border-radius: var(--radius-md);
+  }
+  .pricing-info-level {
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .pricing-info-range {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .pricing-info-sub {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 0.3rem;
+  }
+  .pricing-info-careers {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(185, 139, 63, 0.2);
+    font-style: italic;
+  }
   .price-card {
     background: var(--bg-elevated);
     padding: 2.5rem 2rem;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--line-soft);
-    transition: transform 0.3s;
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--line-soft);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     position: relative;
   }
-  .price-card:hover { transform: translateY(-4px); }
+  .price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--line);
+  }
   .price-card.featured {
     background: linear-gradient(180deg, #1D1D1F 0%, #2C2C2E 100%);
     color: white;
-    border: none;
-    transform: scale(1.03);
-    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--gold);
+    box-shadow: 0 20px 50px rgba(30, 74, 140, 0.18), 0 0 0 1px rgba(185, 139, 63, 0.15);
   }
-  .price-card.featured:hover { transform: scale(1.03) translateY(-4px); }
+  .price-card.featured:hover { transform: translateY(-6px); }
   .price-card.featured .price-name,
   .price-card.featured .price-amount,
   .price-card.featured .price-feature { color: white; }
@@ -924,7 +1138,6 @@
     .showcase-card.c2 { width: 220px; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .subjects-grid, .testi-grid, .pricing-grid { grid-template-columns: 1fr; }
-    .price-card.featured { transform: none; }
     .price-card.featured:hover { transform: translateY(-4px); }
     .method-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -942,7 +1155,45 @@
     opacity: 1;
     transform: translateY(0);
   }
-</style>
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 768px) {
+    .pricing-levels {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .pricing-label {
+      width: 100%;
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+    .pricing-chips {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pricing-levels {
+      padding: 1.2rem;
+    }
+    .pricing-chips {
+      gap: 0.4rem;
+    }
+    .pricing-chip {
+      padding: 0.6rem 0.95rem;
+      font-size: 0.85rem;
+    }
+    .pricing-info {
+      padding: 0.85rem 1rem;
+    }
+    .pricing-info-range {
+      font-size: 1.6rem;
+    }
+  }
+  </style>
 </head>
 <body>
 
@@ -958,7 +1209,7 @@
       <a href="#materias">Materias</a>
       <a href="#metodo">Método</a>
       <a href="#precios">Precios</a>
-      <a href="#contacto" class="nav-cta">Agendar</a>
+      <a href="form_contacto.html" class="nav-cta">Agendar</a>
     </div>
   </div>
 </nav>
@@ -1025,10 +1276,41 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-portrait">
-        <img class="about-portrait-logo" src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="">
-        <div class="about-portrait-tag">
-          <div class="about-portrait-tag-title">Angelo Duriel Azcorra</div>
-          <div class="about-portrait-tag-sub">Campeche, México · 5+ años enseñando</div>
+        <div class="portrait-corner-bl"></div>
+
+        <div class="portrait-header">
+          <div class="portrait-eyebrow">Manifiesto · 2026</div>
+          <img class="portrait-logo" src="https://portafolio.devprojects.space/Assets/Angelo%20Azcorra%20Identidad%20Visual.svg" alt="Angelo Azcorra">
+          <div class="portrait-name">
+            <div class="portrait-firstname">Angelo Duriel</div>
+            <div class="portrait-lastname">Azcorra Moguel</div>
+          </div>
+          <div class="portrait-rule"></div>
+          <div class="portrait-role">Ing. en Sistemas · Docente · Aprendiz Perpetuo</div>
+        </div>
+
+        <div class="portrait-stats">
+          <div class="portrait-stat">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Años enseñando ciencias y tecnología</div>
+          </div>
+          <div class="portrait-stat">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Carreras universitarias en marcha</div>
+          </div>
+          <div class="portrait-stat">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Curiosidad por seguir aprendiendo</div>
+          </div>
+          <div class="portrait-stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Plan personalizado por estudiante</div>
+          </div>
+        </div>
+
+        <div class="portrait-footer">
+          <div class="portrait-quote">"No solo enseño la materia. Te enseño a pensarla."</div>
+          <div class="portrait-signature">— Angelo</div>
         </div>
       </div>
 
@@ -1180,11 +1462,31 @@
       </p>
     </div>
 
+    <!-- SELECTOR DE NIVEL ACADÉMICO -->
+    <div class="pricing-levels">
+      <span class="pricing-label">Selecciona tu nivel:</span>
+      <div class="pricing-chips" id="pricingChips">
+        <div class="pricing-chip active" data-nivel="Secundaria">Secundaria</div>
+        <div class="pricing-chip" data-nivel="Preparatoria">Preparatoria</div>
+        <div class="pricing-chip" data-nivel="Licenciatura">Licenciatura (Ingeniería / Salud)</div>
+      </div>
+    </div>
+
+    <!-- INFO DE RANGO DE PRECIOS POR HORA -->
+    <div class="pricing-info">
+      <div class="pricing-info-level" id="pricingLevel">Rango de precios por hora</div>
+      <div class="pricing-info-range" id="pricingRange">$180–220</div>
+      <div class="pricing-info-sub">Depende de disponibilidad y modalidad</div>
+      <div class="pricing-info-careers" id="pricingCareers">Matemáticas · Física · Química · Biología · Inglés · Historia</div>
+    </div>
+
+    <!-- CARDS DE PRECIOS -->
     <div class="pricing-grid">
+      <!-- SESIÓN INDIVIDUAL -->
       <div class="price-card">
         <div class="price-name">Sesión individual</div>
         <div class="price-sub">Ideal para dudas puntuales</div>
-        <div class="price-amount">$300</div>
+        <div class="price-amount" data-precio-tipo="sesion">$200</div>
         <div class="price-suffix">MXN · 1 hora</div>
         <div class="price-divider"></div>
         <ul class="price-features">
@@ -1193,14 +1495,15 @@
           <li class="price-feature">Material de apoyo incluido</li>
           <li class="price-feature">Sin compromiso de continuidad</li>
         </ul>
-        <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20me%20interesa%20una%20sesi%C3%B3n%20individual." class="price-btn">Reservar sesión</a>
+        <a href="form_contacto.html" class="price-btn">Reservar sesión</a>
       </div>
 
+      <!-- PAQUETE MENSUAL -->
       <div class="price-card featured">
         <div class="price-badge">Más popular</div>
         <div class="price-name">Paquete mensual</div>
         <div class="price-sub">El favorito de mis estudiantes</div>
-        <div class="price-amount">$1,000</div>
+        <div class="price-amount" data-precio-tipo="paquete">$1,200</div>
         <div class="price-suffix">MXN · 4 sesiones / mes</div>
         <div class="price-divider"></div>
         <ul class="price-features">
@@ -1208,15 +1511,16 @@
           <li class="price-feature">Plan de estudio personalizado</li>
           <li class="price-feature">Soporte por WhatsApp entre sesiones</li>
           <li class="price-feature">Ejercicios y material exclusivo</li>
-          <li class="price-feature">Ahorro de 17% vs. individuales</li>
+          <li class="price-feature">Ahorro de 15% vs. individuales</li>
         </ul>
-        <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20quiero%20el%20paquete%20mensual." class="price-btn">Empezar paquete</a>
+        <a href="form_contacto.html" class="price-btn">Empezar paquete</a>
       </div>
 
+      <!-- ASESORÍA INTENSIVA -->
       <div class="price-card">
         <div class="price-name">Asesoría intensiva</div>
         <div class="price-sub">Para exámenes y entregas</div>
-        <div class="price-amount">$1,200</div>
+        <div class="price-amount" data-precio-tipo="intensiva">$1,200</div>
         <div class="price-suffix">MXN · sesión de 4 horas</div>
         <div class="price-divider"></div>
         <ul class="price-features">
@@ -1225,7 +1529,7 @@
           <li class="price-feature">Defensa de proyecto o tesis</li>
           <li class="price-feature">Repaso completo de unidad</li>
         </ul>
-        <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20necesito%20una%20asesor%C3%ADa%20intensiva." class="price-btn">Reservar intensivo</a>
+        <a href="form_contacto.html" class="price-btn">Reservar intensivo</a>
       </div>
     </div>
   </div>
@@ -1348,17 +1652,20 @@
       Tu próxima nota alta <span class="serif">empieza aquí.</span>
     </h2>
     <p class="lead">
-      30 minutos gratis para que veas mi método, identifiquemos tu meta y armemos un plan. Sin compromiso.
+      Cuéntame sobre ti en 5 minutos y te armo un plan personalizado. Primera sesión de diagnóstico gratis.
     </p>
     <div class="hero-actions" style="margin-bottom: 0;">
-      <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico." class="btn-primary">
-        Escríbeme por WhatsApp
+      <a href="form_contacto.html" class="btn-primary">
+        Llenar formulario
         <span class="btn-arrow">→</span>
       </a>
-      <a href="tel:+529811426154" class="btn-secondary">
-        Llamar al 981-142-6154
+      <a href="https://wa.me/529811426154?text=Hola%20Angelo,%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico." class="btn-secondary">
+        💬 Escribir por WhatsApp
       </a>
     </div>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.6);">
+      O llámame directo al <strong style="color: white;">981-142-6154</strong>
+    </p>
   </div>
 </section>
 
@@ -1381,7 +1688,7 @@
         <li><a href="#materias">Materias</a></li>
         <li><a href="#metodo">Método</a></li>
         <li><a href="#precios">Precios</a></li>
-        <li><a href="#contacto">Agendar</a></li>
+        <li><a href="form_contacto.html">Agendar</a></li>
       </ul>
     </div>
 
@@ -1405,14 +1712,6 @@
     </div>
   </div>
 
-  <!-- Cross-link al portafolio profesional -->
-  <div class="cross-link">
-    <div class="cross-link-text">
-      <strong>¿Representas a una empresa?</strong> También ofrezco servicios profesionales de diseño y desarrollo de software.
-    </div>
-    <a href="https://portafolio.devprojects.space">Ver portafolio profesional →</a>
-  </div>
-
   <div class="footer-bottom">
     <div>© 2026 Angelo Duriel Azcorra Moguel. Todos los derechos reservados.</div>
     <div>Hecho con dedicación en Campeche, México</div>
@@ -1425,6 +1724,76 @@
 </a>
 
 <script>
+  // ===== PRECIOS DINÁMICOS POR NIVEL ACADÉMICO =====
+  const preciosPorNivel = {
+    'Secundaria': {
+      sesion: { min: 180, max: 220, promedio: 200 },
+      paquete: { min: 700, max: 900, promedio: 800 },
+      intensiva: { min: 800, max: 1000, promedio: 900 },
+      carreras: 'Matemáticas · Física · Química · Biología · Inglés · Historia'
+    },
+    'Preparatoria': {
+      sesion: { min: 220, max: 300, promedio: 260 },
+      paquete: { min: 900, max: 1200, promedio: 1050 },
+      intensiva: { min: 1000, max: 1400, promedio: 1200 },
+      carreras: 'Cálculo · Física · Química · CENEVAL · Preparación universitaria'
+    },
+        'Licenciatura': {
+      sesion: { min: 300, max: 500, promedio: 400 },
+      paquete: { min: 1200, max: 2000, promedio: 1600 },
+      intensiva: { min: 1400, max: 2200, promedio: 1800 },
+      carreras: 'Tronco común y materias fundamentales'
+    }
+  };
+
+  function formatPrice(num) {
+    return '$' + num.toLocaleString('es-MX');
+  }
+
+  function actualizarPrecios(nivel) {
+    const precios = preciosPorNivel[nivel];
+    if (!precios) return;
+
+    // Actualizar chip activo
+    document.querySelectorAll('.pricing-chip').forEach(chip => {
+      chip.classList.remove('active');
+      if (chip.dataset.nivel === nivel) chip.classList.add('active');
+    });
+
+    // Actualizar info de rango
+    document.getElementById('pricingLevel').textContent = nivel;
+    document.getElementById('pricingRange').textContent =
+      `${formatPrice(precios.sesion.min)}–${formatPrice(precios.sesion.max)} por hora`;
+    document.getElementById('pricingCareers').textContent = precios.carreras;
+
+    // Actualizar cards de precios
+    document.querySelector('[data-precio-tipo="sesion"]').textContent =
+      formatPrice(precios.sesion.promedio);
+    document.querySelector('[data-precio-tipo="paquete"]').textContent =
+      formatPrice(precios.paquete.promedio);
+    document.querySelector('[data-precio-tipo="intensiva"]').textContent =
+      formatPrice(precios.intensiva.promedio);
+
+    // Guardar en sessionStorage para persistencia
+    sessionStorage.setItem('precioNivelSeleccionado', nivel);
+  }
+
+  // Event listeners para chips
+  document.querySelectorAll('.pricing-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      actualizarPrecios(chip.dataset.nivel);
+    });
+  });
+
+  // Restaurar selección anterior si existe
+  const nivelGuardado = sessionStorage.getItem('precioNivelSeleccionado');
+  if (nivelGuardado && preciosPorNivel[nivelGuardado]) {
+    actualizarPrecios(nivelGuardado);
+  } else {
+    // Inicializar con Secundaria (que está activo por defecto)
+    actualizarPrecios('Secundaria');
+  }
+
   // ===== Animación reveal on scroll =====
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1435,7 +1804,7 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.subject-card, .price-card, .testi-card, .method-step, .about-text, .about-portrait, .faq-item').forEach(el => {
+  document.querySelectorAll('.subject-card, .price-card, .testi-card, .method-step, .about-text, .about-portrait').forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
   });
